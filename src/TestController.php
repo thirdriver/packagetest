@@ -38,7 +38,7 @@ class TestController
     public function info()
     {
         return [
-            'version'       => '3.0',
+            'version'       => '4.0',
             'method'        => ['config', 'migration', 'views'],
             'uses'          => [
                 'composer require thirdriver/packagetest',
