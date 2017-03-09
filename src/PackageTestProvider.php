@@ -42,7 +42,7 @@ class PackageTestProvider extends ServiceProvider
             // 发布view
             $this->publishes([
                 __DIR__ . '/../resources/views' => base_path('resources/views/vendor/packagetest'),
-            ], 'passport-views');
+            ]);
 
         }
 

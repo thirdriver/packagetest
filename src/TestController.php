@@ -8,21 +8,51 @@
 namespace ThirdRiver\PackageTest;
 
 
-
+/**
+ * Class TestController
+ * @package ThirdRiver\PackageTest
+ */
+/**
+ * Class TestController
+ * @package ThirdRiver\PackageTest
+ */
 class TestController
 {
 
+    /**
+     * @var string
+     */
+    private $_blade_prefix = 'vendor.packagetest.';
+
+    /**
+     * TestController constructor.
+     */
     public function __construct()
     {
 
     }
 
-    public function say($name)
+    /**
+     * @return array
+     */
+    public function info()
     {
-        echo $name;
+        return [
+            'version'       => '2.0',
+            'method'        => ['config', 'migration', 'views'],
+            'uses'          => [
+                'composer require thirdriver/packagetest',
+                'app.php providers array add ThirdRiver\PackageTest\PackageTestProvider::class',
+                'php artisan vendor:publish',
+                'php artisan migrate'
+            ]
+        ];
     }
 
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function config()
     {
         $config = [
@@ -32,9 +62,12 @@ class TestController
 
         $config = collect($config)->toJson();
 
-        return view('config', compact('config'));
+        return view($this->_blade_prefix . 'config', compact('config'));
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function migration()
     {
         $migration = [
@@ -47,9 +80,12 @@ class TestController
 
         $migration = collect($migration)->toJson();
 
-        return view('migration', compact('migration'));
+        return view($this->_blade_prefix . 'migration', compact('migration'));
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function views()
     {
 
@@ -61,7 +97,7 @@ class TestController
 
         $views = collect($views)->toJson();
 
-        return view('views', compact('views'));
+        return view($this->_blade_prefix . 'views', compact('views'));
     }
 
 }
