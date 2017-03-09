@@ -1,9 +1,10 @@
 {
     "name": "thirdriver/packagetest",
     "description": "laravel package test",
+    "keywords": ["laravel", "test", "package"],
     "type": "php",
     "license": "MIT",
-    "minimum-stability": "1.0",
+    "minimum-stability": "dev",
     "authors": [
         {
             "name": "thirdriver",
