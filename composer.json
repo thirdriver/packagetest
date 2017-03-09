@@ -3,7 +3,13 @@
     "description": "laravel package test",
     "type": "php",
     "license": "MIT",
-    "minimum-stability": "dev",
+    "minimum-stability": "1.0",
+    "authors": [
+        {
+            "name": "thirdriver",
+            "email": "a793544531@163.com"
+        }
+    ],
     "require": {},
     "autoload": {
         "psr-4": {
