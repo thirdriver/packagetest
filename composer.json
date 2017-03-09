@@ -1,0 +1,13 @@
+{
+    "name": "thirdriver/packagetest",
+    "description": "laravel package test",
+    "type": "php",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "ThirdRiver\\PackageTest\\": "src"
+        }
+    }
+}
